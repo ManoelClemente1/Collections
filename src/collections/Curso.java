@@ -25,9 +25,20 @@ public class Curso {
 		return Collections.unmodifiableList(aulas);
 	}
 	
+	public int getTempoTotal() {
+		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
+	
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
 	}
+
+	@Override
+	public String toString() {
+		return "Curso [nome=" + nome + ", instrutor=" + instrutor + ", aulas=" + aulas + "]";
+	}
+	
+	
 }
 	
 	
